@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+//import logo from './logo.svg';
+//import './App.css';
 import { Switch, Route } from "react-router-dom";
 import Navigation from "./components/Navigation/Navigation";
 import HomePage from "./components/HomePage/HomePage";
 import MoviesPage from "./components/MoviesPage/MoviesPage";
+import Container from './components/Container/Container';
 
 export default function App() {
   return (
-    <Navigation> 
+    <Container>
+      <Navigation/>
       <Switch>
         <Route path="/" exact>
       <HomePage />
     </Route>
     
-    <Route path="/movies">
+    {/* <Route path="/movies">
       <MoviesPage/>
-      </Route>
+      </Route> */}
        </Switch>
     
-   </Navigation>
+   </Container>
    
   )
   // (

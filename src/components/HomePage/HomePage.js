@@ -4,7 +4,7 @@ import fetchAPI from '../../servises/api-servises';
 
 
 export default function HomePage() {
- // const { url } = useRouteMatch();
+  const { url } = useRouteMatch();
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -16,7 +16,7 @@ export default function HomePage() {
     <div>
         <ul>
           {movies.map(movie => (
-            <li key={movie.id}>{movie.title} 
+            <li key={movie.id}><Link to={`${url}/${movie.id}`}>{movie.title}</Link>
             </li>
           ))}
         </ul>
