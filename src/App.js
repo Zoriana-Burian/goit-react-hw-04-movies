@@ -5,6 +5,7 @@ import Navigation from "./components/Navigation/Navigation";
 import HomePage from "./components/HomePage/HomePage";
 import MoviesPage from "./components/MoviesPage/MoviesPage";
 import Container from './components/Container/Container';
+import NotFound from './components/NotFound/NotFound';
 
 export default function App() {
   return (
@@ -18,6 +19,10 @@ export default function App() {
     {/* <Route path="/movies">
       <MoviesPage/>
       </Route> */}
+        
+        <Route>
+          <NotFound/>
+        </Route>
        </Switch>
     
    </Container>
