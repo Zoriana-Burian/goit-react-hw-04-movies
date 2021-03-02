@@ -6,6 +6,7 @@ import HomePage from "./components/HomePage/HomePage";
 import MoviesPage from "./components/MoviesPage/MoviesPage";
 import Container from './components/Container/Container';
 import NotFound from './components/NotFound/NotFound';
+import MovieDetailsPage from './components/MovieDetailsPage/MovieDetailsPage';
 
 export default function App() {
   return (
@@ -16,9 +17,13 @@ export default function App() {
       <HomePage />
     </Route>
     
-    {/* <Route path="/movies">
+    <Route path="/movies" exact>
       <MoviesPage/>
-      </Route> */}
+      </Route>
+        
+      <Route path="/movies:movieId">
+      <MovieDetailsPage/>
+        </Route>
         
         <Route>
           <NotFound/>

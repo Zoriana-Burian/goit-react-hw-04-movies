@@ -18,3 +18,11 @@ async function fetchWithErrorHandling(url = '', config = {}) {
   return fetchWithErrorHandling(`${BASE_URL}/trending/movie/day?api_key=${KEY}`);
 }
 
+export function fetchMoviesId(movieId) {
+  return fetchWithErrorHandling(`${BASE_URL}/movie/${movieId}?api_key=${KEY}&language=en-US`);
+}
+
+export function fetchMoviesSearchQuery(searchQuery) {
+  return fetchWithErrorHandling( `${BASE_URL}/search/movie?api_key=${KEY}&language=en-US&query=${searchQuery}&page=1&include_adult=false`);
+}
+
