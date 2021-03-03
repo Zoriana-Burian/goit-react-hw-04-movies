@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useRouteMatch } from 'react-router-dom';
 import * as fetchAPI from '../../servises/api-servises';
+import s from './HomePage.module.css';
 
 
 export default function HomePage() {
@@ -20,7 +21,7 @@ useEffect(() => {
       {movies && (
         <ul>
           {movies.map(movie => (
-            <li key={movie.id}>
+            <li key={movie.id} className={s.Movie}>
               <Link to={{pathname: `/movies/${movie.id}`, state: { from: location }} }>{movie.title}</Link>
             </li>
           ))}
@@ -29,4 +30,3 @@ useEffect(() => {
     </>
   );
 }
-

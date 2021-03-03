@@ -26,3 +26,10 @@ export function fetchMoviesSearchQuery(searchQuery) {
   return fetchWithErrorHandling( `${BASE_URL}/search/movie?api_key=${KEY}&language=en-US&query=${searchQuery}&page=1&include_adult=false`);
 }
 
+export function fetchReviews(movieId) {
+  return fetchWithErrorHandling(`${BASE_URL}/movie/${movieId}/reviews?api_key=${KEY}&language=en-US&page=1`);
+}
+
+export function fetchCast(movieId) {
+  return fetchWithErrorHandling(`${BASE_URL}/movie/${movieId}/credits?api_key=${KEY}&language=en-US`);
+}
