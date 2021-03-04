@@ -25,3 +25,38 @@
 .Button:focus {
   background-color: #303f9f;
 }
+
+.Title {
+  font-size: 25px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: #303f9f;
+}
+
+.Text {
+  color: gray;
+  font-size: 18px;
+}
+
+.Info {
+  display: flex;
+}
+
+.Image {
+  margin-right: 15px;
+}
+
+.TitleTwo {
+  font-weight: 600;
+  font-size: 18px;
+  color: #303f9f;
+}
+
+.InfoCastRev {
+  font-size: 18px;
+  color: green;
+  display: flex;
+  text-decoration: none;
+  font-weight: 400;
+  margin: 0;
+  margin-bottom: 15px;
+}

@@ -1,18 +1,25 @@
 //import logo from './logo.svg';
 //import './App.css';
+import { lazy, Suspense } from "react";
 import { Switch, Route } from "react-router-dom";
 import Navigation from "./components/Navigation/Navigation";
-import HomePage from "./components/HomePage/HomePage";
-import MoviesPage from "./components/MoviesPage/MoviesPage";
+// import HomePage from "./components/HomePage/HomePage";
+// import MoviesPage from "./components/MoviesPage/MoviesPage";
 import Container from './components/Container/Container';
-import NotFound from './components/NotFound/NotFound';
-import MovieDetailsPage from './components/MovieDetailsPage/MovieDetailsPage';
+// import NotFound from './components/NotFound/NotFound';
+// import MovieDetailsPage from './components/MovieDetailsPage/MovieDetailsPage';
+
+const HomePage = lazy(() => import('./components/HomePage/HomePage' /* webpackChunkName: "home-page" */));
+const MoviesPage = lazy(() => import('./components/MoviesPage/MoviesPage' /* webpackChunkName: "movies-page" */));
+const MovieDetailsPage = lazy(() => import('./components/MovieDetailsPage/MovieDetailsPage' /* webpackChunkName: "movie-details" */));
+const NotFound = lazy(() => import('./components/NotFound/NotFound' /* webpackChunkName: "not-found" */));
 
 export default function App() {
   return (
     <Container>
-      <Navigation/>
-      <Switch>
+      <Navigation />
+      <Suspense fallback={<h1>Завантаження</h1>}>
+         <Switch>
         <Route path="/" exact>
       <HomePage />
     </Route>
@@ -29,6 +36,8 @@ export default function App() {
           <NotFound/>
         </Route>
        </Switch>
+      </Suspense>
+     
     
    </Container>
    
