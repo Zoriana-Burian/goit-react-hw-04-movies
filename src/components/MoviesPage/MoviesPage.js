@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useHistory, useLocation, Link } from "react-router-dom";
 import * as fetchAPI from '../../servises/api-servises';
 import s from './MoviesPage.module.css';
+import PropTypes from 'prop-types';
 
 export default function MoviesPage() {
     const [movies, setMovies] = useState([]);
@@ -64,3 +65,9 @@ export default function MoviesPage() {
       )}
     </>);
 }
+
+MoviesPage.propTypes = {
+  history: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired
+     
+};

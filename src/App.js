@@ -18,7 +18,7 @@ export default function App() {
   return (
     <Container>
       <Navigation />
-      <Suspense fallback={<h1>Завантаження</h1>}>
+      <Suspense fallback={<h1>Завантаження...</h1>}>
          <Switch>
         <Route path="/" exact>
       <HomePage />

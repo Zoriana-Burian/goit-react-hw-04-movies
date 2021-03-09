@@ -4,6 +4,7 @@ import * as fetchAPI from '../../servises/api-servises';
 // import Cast from '../Cast/Cast';
 // import Reviews from '../Reviews/Reviews';
 import s from './MovieDetailsPage.module.css';
+import PropTypes from 'prop-types';
 
 const Cast = lazy(() => import('../Cast/Cast' /* webpackChunkName: "cast" */));
 const Reviews = lazy(() => import('../Reviews/Reviews' /* webpackChunkName: "reviews" */));
@@ -78,3 +79,8 @@ export default function MovieDetailsPage() {
   );
 }
 
+MovieDetailsPage.propTypes = {
+  history: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired
+     
+};

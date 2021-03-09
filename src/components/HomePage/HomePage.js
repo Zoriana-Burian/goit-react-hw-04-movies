@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation, useRouteMatch } from 'react-router-dom';
 import * as fetchAPI from '../../servises/api-servises';
 import s from './HomePage.module.css';
-
+import PropTypes from 'prop-types';
 
 export default function HomePage() {
   // const { url } = useRouteMatch();
@@ -17,7 +17,7 @@ useEffect(() => {
 
   return (
     <>
-      
+      <h2>Trending today</h2>
       {movies && (
         <ul>
           {movies.map(movie => (
@@ -30,3 +30,7 @@ useEffect(() => {
     </>
   );
 }
+
+HomePage.propTypes = {
+  location: PropTypes.object.isRequired   
+};
