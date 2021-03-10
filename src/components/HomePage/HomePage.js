@@ -1,15 +1,14 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation, useRouteMatch } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import * as fetchAPI from '../../servises/api-servises';
 import s from './HomePage.module.css';
 import PropTypes from 'prop-types';
 
 export default function HomePage() {
-  // const { url } = useRouteMatch();
   const [movies, setMovies] = useState([]);
   const location = useLocation();
 
-useEffect(() => {
+  useEffect(() => {
     fetchAPI.fetchMovies().then(moviesTrend => {
       setMovies(moviesTrend.results);
     });
@@ -22,7 +21,14 @@ useEffect(() => {
         <ul>
           {movies.map(movie => (
             <li key={movie.id} className={s.Movie}>
-              <Link to={{pathname: `/movies/${movie.id}`, state: { from: location }} }>{movie.title}</Link>
+              <Link
+                to={{
+                  pathname: `/movies/${movie.id}`,
+                  state: { from: location },
+                }}
+              >
+                {movie.title}
+              </Link>
             </li>
           ))}
         </ul>
@@ -32,5 +38,5 @@ useEffect(() => {
 }
 
 HomePage.propTypes = {
-  location: PropTypes.object.isRequired   
+  location: PropTypes.object,
 };
